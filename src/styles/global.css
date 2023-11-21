@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--font-family);
+}
+
+ul
+{
+  list-style: none;
+}
+
+input, button
+{
+  outline: none;
+  border: none;
+}

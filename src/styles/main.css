@@ -1,0 +1,204 @@
+:root
+{
+  --black: #333;
+  --white: #F0F7F9;
+  --gray: #E6EDF0;
+  --blue: #5E7DE9;
+  --blue-100: #DCE9F0;
+  --blue-300: #C6DEEC;
+  --blue-900: #3B5AC6;
+
+  --font-family: 'Alegreya Sans', sans-serif;
+  --background: #F0F7F9;
+
+  --gradient: linear-gradient(180deg, #DCE9F0 59.9%, rgba(220, 233, 240, 0.00) 100%);
+  --card-timeline-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+  --card-skill-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.12);
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  --volume: '50';
+}
+
+body
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  background-color: var(--background);
+  color: var(--white);
+  position: relative;
+}
+
+footer
+{
+  position: absolute;
+  font-weight: var(--font-medium);
+  color: var(--black);
+  bottom: 20px;
+}
+
+.container
+{
+  width: 780px;
+  border-radius: 20px;
+  padding: 35px 40px;
+  background-color: var(--black);
+}
+
+.container header
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h2
+{
+  font-size: 1.6rem;
+}
+
+header .column
+{
+  display: flex;
+  align-items: center;
+}
+
+header .column span
+{
+  font-weight: var(--font-medium);
+  margin-right: 15px;
+  font-size: 1.19rem;
+}
+
+.volume-slider input
+{
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--blue);
+  height: 0.5rem;
+  width: 12rem;
+  border-radius: 10px;
+  accent-color: #fff;
+}
+
+.volume-slider input::-webkit-slider-thumb
+{
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.volume-slider input::after
+{
+  content: attr(data-volume);
+  position: absolute;
+  color: var(--white);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.keys-check input
+{
+  width: 60px;
+  height: 30px;
+  appearance: none;
+  border-radius: 30px;
+  background-color: var(--blue);
+  cursor: pointer;
+  position: relative;
+}
+
+.keys-check input::after
+{
+  content: '';
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--black);
+
+  position: absolute;
+  top: 50%;
+  left: 0.3rem;
+  border-radius: inherit;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+}
+
+.keys-check input:checked::after
+{
+  left: 2.1rem;
+  background-color: var(--white);
+}
+
+.piano-keys
+{
+  display: flex;
+  margin-top: 40px;
+}
+
+.piano-keys .key
+{
+  cursor: pointer;
+  list-style: none;
+  color: #a2a2a2;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.piano-keys .white
+{
+  width: 70px;
+  height: 230px;
+  border-radius: 8px;
+  background: linear-gradient(var(--white) 90%, var(--blue-300) 30%);
+}
+
+.piano-keys .black
+{
+  width: 50px;
+  height: 140px;
+  z-index: 2;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(var(--black) 60%, black);
+
+  margin: 0 -22px 0 -22px;
+}
+
+.piano-keys span
+{
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.13rem;
+}
+
+.piano-keys .white:active, .white.active
+{
+  box-shadow: inset -5px -5px 2px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom #fff 0%, #eee 100);
+}
+
+.piano-keys .black:active, .black.active
+{
+  box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom #fff 0%, #eee 100);
+}
+
+.hide span
+{
+  display: none;
+}
